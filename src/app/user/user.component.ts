@@ -1,0 +1,78 @@
+import { Component, OnInit} from '@angular/core';
+import { FormControl,FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { MatFormField, MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-user',
+  imports: [MatInputModule,MatFormFieldModule,MatButtonModule,MatFormField,ReactiveFormsModule,CommonModule],
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css'
+})
+
+export class UserComponent implements OnInit {
+
+  userForm!: FormGroup;
+  usersArray: any[] = []; //stock
+  nextId: number = 1; 
+
+
+  constructor() {
+    
+  }
+
+  ngOnInit() 
+  {
+    //let usersArray: any[] = []; //stock
+    this.userForm= new FormGroup({
+    
+    name: new FormControl(''),
+    surname: new FormControl(''),
+    birthdate: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    adresse : new FormControl(''),
+
+        //name: this.name,
+        //surname:this.surname
+      
+  //initialize the form controls with default values if needed
+});}
+ngOnchanges() {
+
+  this.userForm.patchValue(this.usersArray);
+  
+}
+
+AddUser() {
+  const newUser = { id: this.nextId, ...this.userForm.value };
+  // const newUser = this.userForm.value;
+  // newUser.id = this.nextId; 
+  console.log(newUser);
+  this.usersArray.push(newUser);
+  this.userForm.reset();
+  this.nextId++;
+  console.log(this.usersArray);
+  };
+
+
+
+
+  EditUser(){
+
+  }
+
+
+
+
+  // getAllUsers(){
+  //   console.log(this.userForm.value);
+  //   this.usersArray.push(this.userForm.value);
+  //   console.log(this.usersArray);
+  //   this.userForm.reset();
+  // }
+
+ 
+}

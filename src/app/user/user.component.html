@@ -1,0 +1,97 @@
+
+<!-- <div class="addUserForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [formGroup]="name" />
+
+    <label for="surname">Surame:</label>
+    <input type="text" id="surname" [formGroup]="surname" />
+
+    <label for="birthdate">Birth Date:</label>
+    <input type="date" id="birthdate" [formGroup]="birthdate" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" [formControl]="email" />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" [formControl]="phone" />
+
+    <label for="adresse">Adresse:</label>
+    <input type="text" id="adresse" [formControl]="adresse" />
+
+</div> -->
+<!-- <div class="addUserForm">
+
+        <mat-form-field appearance="fill" ><mat-label>Name</mat-label><input matInput></mat-form-field>
+
+        <mat-form-field appearance="fill" ><mat-label>Surname</mat-label> <input matInput> </mat-form-field>
+
+    
+        <mat-form-field appearance="fill" > <mat-label>adress</mat-label><input matInput></mat-form-field>
+      
+        <mat-form-field appearance="fill" >><mat-label>phone</mat-label><input matInput></mat-form-field>
+      
+        <mat-form-field appearance="fill" >><mat-label>email</mat-label><input matInput></mat-form-field>
+ 
+        <mat-form-field appearance="fill" > <mat-label>adress</mat-label><input matInput></mat-form-field>
+</div> -->
+
+
+    <!-- <form>
+
+        <mat-form-field></mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput  formControlName="name" >
+
+</form> -->
+<!-- <form [formGroup]="userForm" (ngSubmit)="AddUser()">
+    <mat-form-field>
+      <mat-label>Prénom</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field> -->
+
+<div class="formulaire">
+    <form [formGroup]="userForm" (ngSubmit)="AddUser()" class="addUserForm">
+        <mat-form-field appearance="fill"> <mat-label>Name</mat-label> <input matInput formControlName="name"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>Surame</mat-label> <input matInput formControlName="surname"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>birthdate</mat-label> <input matInput formControlName="birthdate"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>email</mat-label> <input matInput formControlName="email"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>phone</mat-label> <input matInput formControlName="phone"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>adresse</mat-label> <input matInput formControlName="adresse"></mat-form-field>
+
+        <button mat-raised-button type="submit">Add user</button>
+
+        <button type="button" ng-click="editUser(user)">Edit</button>
+    </form>
+</div>
+
+ <div class="userTable">
+    <h3>List of useers</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Id          </th>
+          <th>Name           </th>
+          <th>Surname         </th>
+          <th>Birthdate         </th>
+          <th>Email         </th>
+          <th>Phone Number         </th>
+          <th>Adress         </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersArray">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.surname }}</td>
+          <td>{{ user.birthdate }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.adresse }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    
+
+  </div>  
