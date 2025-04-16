@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() 
   {
-    //let usersArray: any[] = []; //stock
+    
     this.userForm= new FormGroup({
     
     name: new FormControl(''),
@@ -35,10 +35,7 @@ export class UserComponent implements OnInit {
     phone: new FormControl(''),
     adresse : new FormControl(''),
 
-        //name: this.name,
-        //surname:this.surname
-      
-  //initialize the form controls with default values if needed
+
 });}
 ngOnchanges() {
 
@@ -55,6 +52,7 @@ AddUser() {
   this.userForm.reset();
   this.nextId++;
   console.log(this.usersArray);
+  
   };
 
 
@@ -64,15 +62,6 @@ AddUser() {
 
   }
 
-
-
-
-  // getAllUsers(){
-  //   console.log(this.userForm.value);
-  //   this.usersArray.push(this.userForm.value);
-  //   console.log(this.usersArray);
-  //   this.userForm.reset();
-  // }
 
  
 }
