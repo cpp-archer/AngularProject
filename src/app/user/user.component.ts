@@ -18,7 +18,6 @@ export class UserComponent implements OnInit {
   usersArray: any[] = []; //stock
   nextId: number = 1; 
 
-
   constructor() {
     
   }
@@ -52,7 +51,7 @@ AddUser() {
   this.userForm.reset();
   this.nextId++;
   console.log(this.usersArray);
-  
+
   };
 
 
