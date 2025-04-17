@@ -16,5 +16,13 @@ export class UserListComponent {
     console.log(this.users);
   }
 
+  deleteUser(id: number) {
+    UserComponent.usersArray = UserComponent.usersArray.filter(user => user.id !== id);
+    console.log(UserComponent.usersArray);
+    this.users=UserComponent.usersArray; // met a jour
+    console.log(this.users);
+  }
+
+ 
 }
 

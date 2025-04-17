@@ -11,4 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class HomeComponent {
 
+
+  constructor() {
+   console.log('home component constructor');
+    
+  }
 }

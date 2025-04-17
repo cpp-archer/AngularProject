@@ -21,7 +21,11 @@
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.adresse }}</td>
-          <td><button type="button" ng-click="editUser(user)">Edit</button></td>
+
+          <td><button mat-button (click)="deleteUser(user.id)"> Delete </button></td>
+          <td><button mat-button > Edit </button></td>
+          <!-- <td><button mat-button (click)="editUser(user)">Edit</button></td> -->
+         
         </tr>
       </tbody>
     </table>

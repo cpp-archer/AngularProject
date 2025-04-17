@@ -1,14 +1,12 @@
 <div class="formulaire">
     <form [formGroup]="userForm" (ngSubmit)="AddUser()" class="addUserForm">
-        <mat-form-field appearance="fill"> <mat-label>Name</mat-label> <input matInput formControlName="name"></mat-form-field>
-        <mat-form-field appearance="fill"> <mat-label>Surame</mat-label> <input matInput formControlName="surname"></mat-form-field>
-        <mat-form-field appearance="fill"> <mat-label>birthdate</mat-label> <input matInput formControlName="birthdate"></mat-form-field>
-        <mat-form-field appearance="fill"> <mat-label>email</mat-label> <input matInput formControlName="email"></mat-form-field>
-        <mat-form-field appearance="fill"> <mat-label>phone</mat-label> <input matInput formControlName="phone"></mat-form-field>
-        <mat-form-field appearance="fill"> <mat-label>adresse</mat-label> <input matInput formControlName="adresse"></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>Name</mat-label> <input type="text"   matInput  formControlName="name" ></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>Surame</mat-label> <input type="text"  matInput  formControlName="surname" ></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>birthdate</mat-label> <input type="date"   matInput  formControlName="birthdate" ></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>email</mat-label> <input type="email"   matInput  formControlName="email" ></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>phone</mat-label> <input type="number"   matInput  formControlName="phone" ></mat-form-field>
+        <mat-form-field appearance="fill"> <mat-label>adresse</mat-label> <input type="text"   matInput  formControlName="adresse" ></mat-form-field>
 
-        <button mat-raised-button type="submit">Add user</button>
-
-        
+        <button mat-raised-button type="submit" [disabled]="userForm.invalid">Add user</button>  
     </form>
 </div>
