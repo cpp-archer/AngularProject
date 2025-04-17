@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import {  MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -10,7 +10,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
 
   constructor() {
    console.log('home component constructor');

@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-user',
   imports: [MatInputModule,MatFormFieldModule,MatButtonModule,MatFormField,ReactiveFormsModule,CommonModule],
@@ -16,7 +17,7 @@ export class UserComponent implements OnInit {
 
   userForm!: FormGroup;
   static usersArray: any[] = []; //stock
-  nextId: number = 1; 
+  static nextId: number = 1; //when i put thiis in static, i no longer have the ID increment problems
   
   //currentEditId: number | null = null; // for edit user
   
@@ -27,6 +28,7 @@ export class UserComponent implements OnInit {
   ngOnInit() 
   {
     
+    //THE ID INCREMENT WORK WITH THIS PART (without the validators) like we've seen together 
 //     this.userForm= new FormGroup({
     
 //     name: new FormControl('',),
@@ -37,11 +39,14 @@ export class UserComponent implements OnInit {
 //     adresse : new FormControl(''),
 // });
 
+
+//WHEN I USE THIS without , THE ID INCREMENT WONT WORK, but with the thing on top does 
+//ok well now the increment works when i put the "next id" in static, idk why
   this.userForm = new FormGroup({
     name: new FormControl('', Validators.required),
     surname: new FormControl('', Validators.required),
     birthdate: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('',[ Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
     adresse: new FormControl('', Validators.required),
   });
@@ -49,24 +54,23 @@ export class UserComponent implements OnInit {
   
 }
 
-
 // ngOnchanges() {
-
 //   this.userForm.patchValue(UserComponent.usersArray);
-  
 // }
 
 AddUser() {
  
-  const newUser = { id: this.nextId, ...this.userForm.value };
+  const newUser = { id: UserComponent.nextId, ...this.userForm.value };
   // const newUser = this.userForm.value;
   // newUser.id = this.nextId; 
-  console.log('id = ' + this.nextId);
-  console.log('from user comp => ' + newUser);
+  console.log('id = ' + UserComponent.nextId);
+  console.log('from user comp => ' + JSON.stringify(UserComponent.usersArray.length));
   UserComponent.usersArray.push(newUser);
   this.userForm.reset();
-  this.nextId++;
+  UserComponent.nextId++;
   console.log(UserComponent.usersArray);
+
+  //return new User model
 
 }
 
