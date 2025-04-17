@@ -12,12 +12,5 @@ import { UserListComponent } from "./user-list/user-list.component";
 export class AppComponent {
   title = 'AngularProject';
 
-  // userForm:FormGroup = new FormGroup({
-  //   name: new FormControl(''),
-  //   surname: new FormControl(''),
-  //   birthdate: new FormControl(''),
-  //   email: new FormControl(''),
-  //   phone: new FormControl(''),
-  //   adresse: new FormControl('')
-  // })
+
 }
