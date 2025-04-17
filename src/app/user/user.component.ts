@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class UserComponent implements OnInit {
 
   userForm!: FormGroup;
-  usersArray: any[] = []; //stock
+  static usersArray: any[] = []; //stock //appartient à la classse et peut etre recup par d'autres
   nextId: number = 1; 
 
   constructor() {
@@ -38,23 +38,22 @@ export class UserComponent implements OnInit {
 });}
 ngOnchanges() {
 
-  this.userForm.patchValue(this.usersArray);
+  this.userForm.patchValue(UserComponent.usersArray);
   
 }
 
 AddUser() {
   const newUser = { id: this.nextId, ...this.userForm.value };
-  // const newUser = this.userForm.value;
-  // newUser.id = this.nextId; 
   console.log(newUser);
-  this.usersArray.push(newUser);
+  UserComponent.usersArray.push(newUser);
   this.userForm.reset();
   this.nextId++;
-  console.log(this.usersArray);
+  console.log(UserComponent.usersArray);
+
+    // const newUser = this.userForm.value;
+  // newUser.id = this.nextId; 
 
   };
-
-
 
 
   EditUser(){

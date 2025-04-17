@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from "./user/user.component";
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormField } from '@angular/material/input';
-import{FormsModule} from '@angular/forms';
+
 import { HomeComponent } from "./home/home.component";
+import { UserListComponent } from './userList/user-list.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserComponent, HomeComponent],
+  imports: [RouterOutlet, UserComponent, HomeComponent, UserListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
