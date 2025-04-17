@@ -5,9 +5,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormField } from '@angular/material/input';
 import{FormsModule} from '@angular/forms';
+import { HomeComponent } from "./home/home.component";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserComponent],
+  imports: [RouterOutlet, UserComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
