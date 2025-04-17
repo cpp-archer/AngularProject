@@ -1,0 +1,7 @@
+.example-container {
+    height: 100vh; /* occupe toute la hauteur de la fenêtre */
+  }
+  
+  mat-drawer {
+    width: 250px; /* largeur fixe pour la barre latérale */
+  }
