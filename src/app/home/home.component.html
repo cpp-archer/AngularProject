@@ -1,7 +1,13 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>
-    <button mat-button>Create an user</button><br>
-     <button mat-button>List of users</button>
-  </mat-drawer>
-  <mat-drawer-content>Main content</mat-drawer-content>
-</mat-drawer-container>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <!-- <button mat-button>Create an user</button><br>
+     <button mat-button>List of users</button><br> -->
+     <button mat-button><a routerLink="/home">HOME</a></button><br>
+     <button mat-button><a routerLink="/createUser">Create user</a></button><br>
+     <button mat-button><a routerLink="/listUser">List of users</a></button><br>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+
+</mat-sidenav-container>
